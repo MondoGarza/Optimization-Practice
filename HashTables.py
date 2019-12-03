@@ -10,6 +10,7 @@ def pairs(arr, k):
 	#Total Complexity => O(n+n) => O(2n) => O(n)
 	return ans
 
+#Example arr and k
 arr = [1,7,5,9,2,12,3]
 k = 2
 print(pairs(arr, k))
