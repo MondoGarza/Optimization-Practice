@@ -1,65 +1,22 @@
-#Find all permutations of s within b
-  
-# Function returns true 
-# if contents of arr1[] and arr2[] 
-# are same, otherwise false. 
-def compare(arr1, arr2, MAX): 
-    for i in range(MAX): 
-        if arr1[i] != arr2[i]: 
-            return False
-    return True
-       
-def searchWithin(s, b):
-	MAX=256
+#Function to check if string a is a permutation
+#of string b
+#Runtime = O(a + b + 256) => O(a + b)
+#space = O(hash1 + hash2) => O(1)
+def is_perm(a, b):
+	hash1 = [0] * 256
+	hash2 = [0] * 256
 
-	M = len(s)
-	N = len(b) 
-  
-    # countP[]:  Store count of 
-    # all characters of stern 
-    # countTW[]: Store count of 
-    # current window of text
-    countP = [0]*MAX
-    countTW = [0]*MAX
-  
-    for i in range(M): 
-        (countP[ord(s[i])]) += 1
-        (countTW[ord(b[i])]) += 1
+	for char1 in a:
+		hash1[ord(char1)] += 1
+		
+	for char2 in b:
+		hash2[ord(char2)] += 1
 
-    # Traverse through remaining 
-    # characters of stern 
-    for i in range(M,N): 
-        # Compare counts of current 
-        # window of text with 
-        # counts of stern[] 
-        if compare(countP, countTW, MAX): 
-            print("Found at Index", (i-M)) 
-  
-        # Add current character to current window 
-        (countTW[ord(b[i])]) += 1
-  
-        # Remove the first character of previous window 
-        (countTW[ord(b[i-M])]) -= 1
-      
-    # Check for the last window in text     
-    if compare(countP, countTW, MAX): 
-        print("Found at Index", N-M)
-        
-def subPerm(s):
-    sLeft = [s[0]+s[1],s[1]+s[0]]
-    return sLeft
+	if hash1 == hash2:
+		return ("yes")
+	else:
+		return ("No")
 
-def placein(letter, string):
-    newS = [0,string for string in string]
-
-def perm(s):
-    sList = list(s)
-    newPerm = 
-    for i in range(s-1):
-        perm
-
-
-small = 'abbc'
-big = 'cbabadcbbabbcbabaabccbabc'
-print([0,string])
-searchWithin(small,big)
+perm1 = 'abcabcabcabcabcabc'
+perm2 = 'aaaaaabbbbbbcccccc'
+is_perm(perm1,perm2)
