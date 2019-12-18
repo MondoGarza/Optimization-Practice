@@ -14,7 +14,7 @@ def foo(theList):
 
 ## Time complexity => 0(n^2)
 ## Space complexity => 0(1)
-def foo(theList):
+def new_foo(theList):
 	for i in range(len(theList)):
 		for f in range(len(theList)):
 			print(str(i) + "," + str(f))
