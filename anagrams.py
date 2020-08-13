@@ -26,13 +26,10 @@ def sherlockAndAnagrams(s):
             signature = tuple(signature)
             signatures[signature] = signatures.get(signature, 0) + 1
 
-    for key,value in signatures.items():
-        print(key,value)
-
     res = 0
     for count in signatures.values():
         res += count*(count-1)/2
     return int(res)
 
-s = "abcdea"
+s = "amando"
 print(sherlockAndAnagrams(s))

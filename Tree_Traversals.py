@@ -12,15 +12,12 @@ def printInorder(root):
         printInorder(root.right) 
   
 def printPostorder(root): 
-  
     if root: 
         printPostorder(root.left) 
         printPostorder(root.right) 
         print(root.val),
 
-
 def printPreorder(root): 
-  
     if root: 
         print(root.val), 
         printPreorder(root.left)  
